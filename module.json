@@ -1,6 +1,6 @@
 {
-    "version": "1.9.0",
-    "versionCode": 190,
-    "zipUrl": "https://github.com/gloeyisk/universal-gms-doze/releases/download/1.9.0/gms_1.9.0.zip",
-    "changelog": "https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/master/changelog.md"
+  "version": "1.0.0",
+  "versionCode": 100,
+  "zipUrl": "https://github.com/happyjake/universal-miui-doze/releases/download/1.0.0/MIUI_1.0.0.zip",
+  "changelog": "https://raw.githubusercontent.com/happyjake/universal-miui-doze/master/changelog.md"
 }

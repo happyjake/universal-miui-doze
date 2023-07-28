@@ -2,9 +2,9 @@
 set -o standalone
 
 #
-# Universal GMS Doze by the
+# Universal MIUI Doze by the
 # open-source loving GL-DP and all contributors;
-# Patches Google Play services app and certain processes/services to be able to use battery optimization
+# Patches MIUI services app and certain processes/services to be able to use battery optimization
 #
 
 (   
@@ -14,8 +14,8 @@ until [ $(resetprop sys.boot_completed) -eq 1 ] &&
 sleep 100
 done
 
-# GMS components
-GMS="com.google.android.gms"
+# MIUI components
+MIUI="com.google.android.MIUI"
 GC1="auth.managed.admin.DeviceAdminReceiver"
 GC2="mdm.receivers.MdmDeviceAdminReceiver"
 NLL="/dev/null"
@@ -23,12 +23,20 @@ NLL="/dev/null"
 # Disable collective device administrators
 for U in $(ls /data/user); do
 for C in $GC1 $GC2 $GC3; do
-pm disable --user $U "$GMS/$GMS.$C" &> $NLL
+pm disable --user $U "$MIUI/$MIUI.$C" &> $NLL
 done
 done
 
-# Add GMS to battery optimization
-dumpsys deviceidle whitelist -com.google.android.gms &> $NLL
+# Add MIUI to battery optimization
+dumpsys deviceidle whitelist -com.xiaomi.market
+dumpsys deviceidle whitelist -com.miui.cloudbackup
+dumpsys deviceidle whitelist -com.miui.cloudservice
+dumpsys deviceidle whitelist -com.miui.weather2
+dumpsys deviceidle whitelist -com.lbe.security.miui
+dumpsys deviceidle whitelist -com.eg.android.AlipayGphone
+dumpsys deviceidle whitelist -com.miui.gallery
+dumpsys deviceidle whitelist -com.xiaomi.account
+dumpsys deviceidle whitelist -com.unionpay.tsmservice.mi
 
 exit 0
 )
