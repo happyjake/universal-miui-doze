@@ -31,6 +31,7 @@ done
 dumpsys deviceidle whitelist -com.xiaomi.market
 dumpsys deviceidle whitelist -com.miui.cloudbackup
 dumpsys deviceidle whitelist -com.miui.cloudservice
+dumpsys deviceidle whitelist -com.miui.micloudsync
 dumpsys deviceidle whitelist -com.miui.weather2
 dumpsys deviceidle whitelist -com.lbe.security.miui
 dumpsys deviceidle whitelist -com.eg.android.AlipayGphone
